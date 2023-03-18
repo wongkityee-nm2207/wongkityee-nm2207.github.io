@@ -1,62 +1,127 @@
-<!DOCTYPE html>
-<!-- saved from url=(0052)file:///Users/kityee/Documents/NM2207/web/index.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- DASHBOARD -->
+  <!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="stylesheet.css" />
+  <script defer type="text/javascript" src="file:///Users/kityee/Documents/NM2207/web/Week9Submission/Week9Submission/submission.js "></script>
 
-
-    
-        <link rel="stylesheet" type="text/css" href="css/appstyle.css">
-        <title>flexbox layout</title>
-        <script defer="" type="text/javascript" src="appscripts/main.js">
-        </script>
-    </head>
-
-  <body>
-    
-    <div class="container">
-      <header class="header">
-        <h2>⭑･ﾟﾟ･*:༅｡.｡༅:*ﾟ:*:✼✿ Kit Yee's Homework! ✿✼:*ﾟ:༅｡.｡༅:*･ﾟﾟ･⭑</h2>
-      </header>
-
-      <nav class="sidebar">
-        <b>Classwork Challenges</b>
-        <p> 
-          <a href="Session01.class/index.html"> Session01.class</a> <br><br>
-          <a href="Session02.class/tableTests/index.html"> Session02.class</a> <br><br>
-          <a href="Session04.class/index.html"> Session04.class</a> <br><br>
-          <a href="Session05.class/index.html"> Session05.class</a> <br><br>
-          <a href="https://wongkityee-nm2207.github.io/">My Github Link!</a><br><br>
-          <a href="Session07.class/sharing_deepfakes_barChart.html"> Session07.class</a> 
-          <a href="Session08.class/graduatebarChart.html"> Session08.class</a> 
-          
-          
-        </p>
-      </nav>
-
-      <article class="content">
-        <b> Assignments </b>
-        <p>
-          <a href="Session01.assignment/HyperlinkedStorytelling"> Session01.class</a>
-          <a href="Session02.assignment/contactform/index.html"> Session02.assignment</a>
-          <a href="Session03.class/index.html"> Session03.class</a>
-        </p>
-      </article>
-
-      <!-- Ditto the previous note about <aside>. -->
-      <aside class="sidebar">
-        <b>CodeAlongs</b>
-        <a href="Session07.codealong/barplot/index.html"> Session07.barplot</a>
-        <a href="Session07.codealong/lineplot/index.html"> Session07.lineplot</a>
-        <img src="images/jsScreenshot.png" width= "200px">
-        <a href="Session09.codealong/index.html"> Session09.fetchAPI</a>
-      </aside>
-
-      <footer class="footer">
-        <p>Proposal: Movies have long shaped trends and pop culture. How have Romcoms it shaped our fashion choices through the decades?</p>
-      </footer>
+  
+  <div class="container-fluid dashboard">
+    <!-- DASHBOARD TITLE -->
+    <div class="row grey-block" >
+        <div class="col-md-3 header-img">
+            <img src="/web/Week9Submission/images/utown.jpg"/>
+        </div>
+        <div class="col-md-6">
+            <div class="header-title">
+                Making Cents of University Education in Singapore
+            </div>
+            <div class="header-subtitle">
+                <h1>
+                    A visual representation of how much it pays to go to University in Singapore.
+                </h1>
+            </div>
+        </div>
     </div>
-  
+    <!-- END OF DASHBOARD TITLE -->
+    <!-- ONE BLOCK WITH WHITE BACKGROUND -->
+    <div class="row white-block" >
+        <h1 class="block-title">
+            University Graduates and their Pay over the Years
+            <body>
+                <h3 class="text-primary text-center">
+                  The culture around university education has long been entrenched in the idea of prestige and pragatism. In Singapore, a large concern around the university one attends and even the degree one chooses to study is based on how much it pays in the future (citation).
+                </h3>
+                
+                  <div class="col-sm-6 text-center">
+                     <label class="label label-success">Line Chart on Different AVG Pay According to Uni over the years</label>
+                    <div id="line-chart"></div>
+                    <button id="myBtn">Change Uni</button> <!--change to next line chart showing the next university-->
+                  </div>
+                <h3 class="text-primary text-center">
+                Prestige attached to the name of a university could also affect the ammount of pay a university graduate receives, usually based on whether it is a private or state university.
+                </h3>
+                <div class="col-sm-6 text-center">
+                    <label class="label label-success">Bar Chart comparing average Pay According to Uni</label>
+                   <div id="line-chart"></div>
+                </div>
+              </body>
+        </h1>
+        <h2 class="block-subtitle">
+            So, what pays the most as a Singaporean university graduate?
+        </h2>
+        <!-- SECTION CONTENT -->
+        <div class="row block-section">
+            <!-- TEXT SECTION WITH 2 COUMNS -->            
+            <div class="col-md-6 block-section-text block-section-text-left">
+                The degree one studies also affects the pay a graduate will receive. This is a result of industry needs and trends. 
 
-  
+                <div class="col-sm-6 text-center">
+                    <label class="label label-success">Bar Chart on the Top 20 Best paid university graduate. (uni&degree)</label>
+                   <div id="line-chart"></div>
 
+            </div>
+            <h2 class="block-subtitle">
+                What is the most 'Cost-Efficient' University Graduate?
+            </h2>
+            <div class="col-md-6 block-section-text">
+                In a society as pragmatic as Singapore, what would hypothetically be the most cost-effcient career path? This would take into consideration the degree and university that would take the least amount of time (in years and month) to pay off the school fees. 
+                <div class="col-md-8 block-section-chart">
+                    <div class="col-sm-6 text-center">
+                        <label class="label label-success">Bar Chart on the Top 5 most cost-efficient university graduate.</label>
+                       <div id="line-chart"></div>
+                </div>
+                
+            <!-- TEXT SECTION WITH 1 COLUMN END -->  
+            <!-- CHART SECTION FULL WIDTH -->
+            <div class="col-md-12 block-section-chart">
+                
+            </div>
+            <!-- CHART SECTION FULL WIDTH END -->
+        </div>
+        <!-- SECTION CONTENT END-->
+    </div>
+    <!-- ONE BLOCK WITH WHITE BACKGROUND END -->
+    <!-- ONE BLOCK WITH GREY BACKGROUND -->
+    <div class="row grey-block" >
+        <h1 class="block-title">
+            Calculate the Cost-Efficiency of Your Degree
+        </h1>
+        <h2 class="block-subtitle">
+            Input the degree and university to calculate how many months it would take to pay off your degree.
+        </h2>
+        <!-- SECTION CONTENT -->
+        <div class="row block-section">
+            <!-- TEXT SECTION WITH 1 COLUMN -->            
+            <div class="col-md-12 block-section-text block-section-text-left">
+                <label for="university">Choose a university:</label>
 
-</body></html>
+                <select name="university" id="university">
+                <option value="NUS">NUS</option>
+                <option value="SMU">SMU</option>
+                <option value="NTU">NTU</option>
+                <option value="SIM">SIM</option>
+                <option value="SUSS">SUSS</option>
+                <option value="SUTD">SUTD</option>
+                </select>
+
+                <label for="degree">Choose a degree:</label>
+
+                <select name="university" id="university">
+                <option value="socialsciences">Social Sciences</option>
+                <option value="business">Business</option>
+                <option value="science">Science</option>
+                <option value="medicine">Medicine</option>
+                <option value="law">Law</option>
+                <option value="computerscience">Computer Science</option>
+                </select>
+
+                <button id="months">Calculate Months</button> <!--calculate amount of months it would take to pay of school fees-->
+
+                <!--function to calculate above here-->
+
+            </div>
+            <!-- TEXT SECTION WITH 1 COLUMN END -->
+            <!-- TEXT SECTION WITH 2 COUMNS -->            
+            
+</div>
+    

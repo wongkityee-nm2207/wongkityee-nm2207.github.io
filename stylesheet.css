@@ -1,0 +1,88 @@
+.dashboard {
+    margin: -10px;
+    margin-top: -20px;
+}
+.grey-block {
+    background-color: whitesmoke;
+    padding: 15px 60px;
+}
+.white-block {
+    background-color: white;
+    padding: 15px 60px;
+}
+.header-img {
+    text-align: center;
+}
+.header-img img {
+    width: 250px;
+    height: 250px;
+    padding: 25px;
+}
+.header-title {
+    text-align: center;
+    font-size: 4em;
+    font-weight: 300;
+    line-height: 1em;
+    margin: 50px 0 10px 0;
+    color: darkred;
+}
+.header-subtitle {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.header-subtitle h1 {
+    font-weight: 300;
+    color: darkred;
+}
+.header-subtitle h1:before, .header-subtitle h1:after {
+    width: 75px;
+    height: 1px;
+    background-color: darkred;
+    content: '';
+    display: block;
+    vertical-align: middle;
+    margin: 20px auto;
+}
+.block-section {
+    margin: 50px 0px;
+}
+.block-title {
+    text-align: center;
+    font-weight: 500;
+    font-size: 3em;
+    margin-top: 35px !important;
+    color: darkred;
+}
+.block-subtitle {
+    text-align: center;
+    width: 70%;
+    margin: 10px auto;
+    color: darkred;
+    font-weight: 300;
+}
+.block-section-text {
+    padding: 0 35px;
+    margin: 35px 0;
+    text-align: justify;
+    font-size: 1.3em;
+    font-weight: 300;
+}
+.block-section-text-left {
+    border-right: 1px darkred solid;
+}
+.block-section-text a {
+    color: darkred;
+    font-weight: 500;
+}
+rect.highcharts-background {
+    fill: rgba(0, 0, 0, 0) !important;
+}
+
+#area-chart,
+#line-chart,
+#bar-chart,
+#stacked,
+#pie-chart{
+  min-height: 250px;
+}
+    
