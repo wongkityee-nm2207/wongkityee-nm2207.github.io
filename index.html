@@ -1,11 +1,12 @@
-  <!-- DASHBOARD -->
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-  <link rel="stylesheet" href="stylesheet.css" />
-  <script defer type="text/javascript" src="file:///Users/kityee/Documents/NM2207/web/Week9Submission/Week9Submission/submission.js "></script>
-
-  
-  <div class="container-fluid dashboard">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/appstyle.css">
+    <script defer type="text/javascript" src="appscripts/gradChart.js">
+        </script>
+</head>
+<div class="container-fluid dashboard">
     <!-- DASHBOARD TITLE -->
     <div class="row grey-block" >
         <div class="col-md-3 header-img">
@@ -38,6 +39,12 @@
                 
                   <div class="col-sm-6 text-center">
                      <label class="label label-success">Line Chart on Different AVG Pay According to Uni over the years</label>
+                     <!--edit 20/3-->
+                     <script src="https://www.amcharts.com/lib/3/amcharts.js?x"></script>
+                    <script src="https://www.amcharts.com/lib/3/serial.js?x"></script>
+                    <script src="https://www.amcharts.com/lib/3/themes/dark.js"></script>
+                    <div id="chartdiv"></div>	
+                    <!--end of edit-->	
                     <div id="line-chart"></div>
                     <button id="myBtn">Change Uni</button> <!--change to next line chart showing the next university-->
                   </div>
