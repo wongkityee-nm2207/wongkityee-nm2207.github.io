@@ -1,48 +1,69 @@
-
-var data = [
-    { y: '2014', a: 50, b: 90},
-    { y: '2015', a: 65,  b: 75},
-    { y: '2016', a: 50,  b: 50},
-    { y: '2017', a: 75,  b: 60},
-    { y: '2018', a: 80,  b: 65},
-    { y: '2019', a: 90,  b: 70},
-    { y: '2020', a: 100, b: 75},
-    { y: '2021', a: 115, b: 75},
-    { y: '2022', a: 120, b: 85},
-    { y: '2023', a: 145, b: 85},
-    { y: '2024', a: 160, b: 95}
-  ],
-  config = {
-    data: data,
-    xkey: 'y',
-    ykeys: ['a', 'b'],
-    labels: ['Total Income', 'Total Outcome'],
-    fillOpacity: 0.6,
-    hideHover: 'auto',
-    behaveLikeLine: true,
-    resize: true,
-    pointFillColors:['#ffffff'],
-    pointStrokeColors: ['black'],
-    lineColors:['gray','red']
-};
-config.element = 'area-chart';
-Morris.Area(config);
-config.element = 'line-chart';
-Morris.Line(config);
-config.element = 'bar-chart';
-Morris.Bar(config);
-config.element = 'stacked';
-config.stacked = true;
-Morris.Bar(config);
-Morris.Donut({
-element: 'pie-chart',
-data: [
-  {label: "Friends", value: 30},
-  {label: "Allies", value: 15},
-  {label: "Enemies", value: 45},
-  {label: "Neutral", value: 10}
-]
-});
+// Define the initial data
+let allData = {
+    labels: ['2016', '2017', '2018', '2019', '2020', '2021'],
+    datasets: [
+      {
+        label: 'National University of Singapore',
+        data: [50000, 55000, 60000, 65000, 70000, 75000],
+        borderColor: 'red',
+        fill: false
+      },
+      {
+        label: 'Nanyang Technological University',
+        data: [45000, 48000, 52000, 55000, 58000, 61000],
+        borderColor: 'blue',
+        fill: false
+      },
+      {
+        label: 'Singapore Management University',
+        data: [40000, 42000, 44000, 46000, 48000, 50000],
+        borderColor: 'green',
+        fill: false
+      }
+    ]
+  };
+  
+  // Define the options
+  const options = {
+    scales: {
+      yAxes: [
+        {
+          ticks: {
+            beginAtZero: true,
+            callback: function (value, index, values) {
+              return '$' + value.toLocaleString();
+            }
+          }
+        }
+      ]
+    }
+  };
+  
+  // Create the chart with all universities
+  const chart = new Chart(document.getElementById('myChart'), {
+    type: 'line',
+    data: allData,
+    options: options
+  });
+  
+  // Update the chart based on the selected option
+  const universitiesDropdown = document.getElementById('universities');
+  universitiesDropdown.addEventListener('change', function () {
+    const selectedValue = universitiesDropdown.value;
+    let newData = {
+      labels: allData.labels,
+      datasets: []
+    };
+    if (selectedValue === 'all') {
+      newData.datasets = allData.datasets;
+    } else {
+      newData.datasets.push(allData.datasets.find(d => d.label.toLowerCase().includes(selectedValue)));
+    }
+    chart.data = newData;
+    chart.update();
+  });
+  
+  
 
 function myFunction() {
     document.getElementById("demo").innerHTML = "Change Chart";

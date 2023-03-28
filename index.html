@@ -1,15 +1,21 @@
   <!-- DASHBOARD -->
   <!DOCTYPE html>
 <html lang="en">
-  <link rel="stylesheet" href="stylesheet.css" />
-  <script defer type="text/javascript" src="file:///Users/kityee/Documents/NM2207/web/Week9Submission/Week9Submission/submission.js "></script>
+  
+  
+  <head>
+    <script defer src="submission.js"></script>
+    <link rel="stylesheet" href="stylesheet.css" >
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  </head>
 
   
   <div class="container-fluid dashboard">
     <!-- DASHBOARD TITLE -->
     <div class="row grey-block" >
         <div class="col-md-3 header-img">
-            <img src="/web/Week9Submission/images/utown.jpg"/>
+            <img src="images/utown.jpeg">
         </div>
         <div class="col-md-6">
             <div class="header-title">
@@ -22,6 +28,8 @@
                 <h3 class="text-primary text-center">
                     <a href="https://docs.google.com/document/d/1acxiZ6rPzqV4W6omlRf0Tmn2zTSVhVjQt7fsmvgT394/edit?usp=sharing">Draft</a>
                     <a href="https://docs.google.com/presentation/d/1klwHZWW814QlwSAhMNfV3-pUglawx1W1Dsi5_37COuE/edit?usp=sharing">Storyboard</a>
+                    <a href="https://docs.google.com/document/d/1ivRHSBZnBUP3ouHIR_5wancV1pqcvUrpFzV6_thGdG8/edit?usp=sharing">Week 9 Diary</a>
+                    <a href="https://docs.google.com/document/d/12KbLrE8GXsHR9a51fb8hvkiFCJhbdgEVbvZAsdEXsEo/edit?usp=sharing">Week 10 Diary</a>
                     </h3>
             </div>
         </div>
@@ -38,14 +46,16 @@
                 
                   <div class="col-sm-6 text-center">
                      <label class="label label-success">Line Chart on Different AVG Pay According to Uni over the years</label>
-                     <!--edit 20/3-->
-                     <script src="https://www.amcharts.com/lib/3/amcharts.js?x"></script>
-                    <script src="https://www.amcharts.com/lib/3/serial.js?x"></script>
-                    <script src="https://www.amcharts.com/lib/3/themes/dark.js"></script>
-                    <div id="chartdiv"></div>	
-                    <!--end of edit-->	
-                    <div id="line-chart"></div>
-                    <button id="myBtn">Change Uni</button> <!--change to next line chart showing the next university-->
+                     <canvas id="myChart"></canvas>
+
+
+                     <select id="universities">
+                        <option value="all">All Universities</option>
+                        <option value="nus">National University of Singapore</option>
+                        <option value="ntu">Nanyang Technological University</option>
+                        <option value="smu">Singapore Management University</option>
+                      </select>
+                      
                   </div>
                 <h3 class="text-primary text-center">
                 Prestige attached to the name of a university could also affect the ammount of pay a university graduate receives, usually based on whether it is a private or state university.
