@@ -7,6 +7,7 @@
     <script defer src="submission.js"></script>
     <link rel="stylesheet" href="stylesheet.css" >
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   
 
   </head>
 
@@ -41,107 +42,75 @@
             University Graduates and their Pay over the Years
             <body>
                 <h3 class="text-primary text-center">
-                  The culture around university education has long been entrenched in the idea of prestige and pragatism. In Singapore, a large concern around the university one attends and even the degree one chooses to study is based on how much it pays in the future (citation).
+                  The culture around university education has long been entrenched in the idea of prestige and pragatism. 
+                  In Singapore, a large concern around the university one attends and even the degree one chooses to study 
+                  is based on how much it pays in the future. 
+                <br><br>        
+                Singapore is known for its world-class education system, as well as for individuals who track global rankings of universities as a form of validation (Tang, 2022). 
+                Professor Bernard Tan, NUS’ senior vice-provost of undergraduate education, has stated that university world rankings do not adequately capture the quality and employability of graduates.
+                Thus, it would be important to be able to clearly discern whether higher ranked universities such as NTU, SMU and NUS compare to similar local universities who do not rank as high in terms of employability of its graduates or whether other factors, like industry and degree play a bigger role.
+
                 </h3>
                 
                   <div class="col-sm-6 text-center">
-                     <label class="label label-success">Line Chart on Different AVG Pay According to Uni over the years</label>
-                     <canvas id="myChart"></canvas>
+                     
+                     <canvas id="basic-pay"></canvas>
+                     <br>
+                     <div id="chart-type">
+                        <label for="chart-select">Select chart type:</label>
+                        <select id="chart-select">
+                          <option value="bar">Bar chart</option>
+                          <option value="line">Line chart</option>
+                        </select>
+                      </div>
 
-
-                     <select id="universities">
-                        <option value="all">All Universities</option>
-                        <option value="nus">National University of Singapore</option>
-                        <option value="ntu">Nanyang Technological University</option>
-                        <option value="smu">Singapore Management University</option>
-                      </select>
-                      
-                  </div>
                 <h3 class="text-primary text-center">
-                Prestige attached to the name of a university could also affect the ammount of pay a university graduate receives, usually based on whether it is a private or state university.
+                Based on the General Employment Survey conducted yearly by the Ministry of Education across the 6 autonomous universities, it can be seen that
+                traditionally considered "good" schools, namely SMU, NUS and NTU who command the most prestige as a result of their long standing history,
+                surprisingly do not command the highest pay from employers.
+                <br><br>        
+                This could of course be a result of a myriad of reasons such as data inconsistencies or response rates and biases. However, it is important to note that 
+                the degree cluster or industry that one chooses could play a larger role in deciding the pay a graduate receives.
                 </h3>
-                <div class="col-sm-6 text-center">
-                    <label class="label label-success">Bar Chart comparing average Pay According to Uni</label>
-                   <div id="line-chart"></div>
-                </div>
-              </body>
+
+
+
+                
+<!DOCTYPE html>
+                      
+</div>
+<h3 class="text-primary text-center">
+Below is a chart that displays the pay recieved by degree clusters across all 6 universities. Medicine has been left out as there was a lack of data in the 
+referenced GES.
+
+<canvas id="degreeBasicChart"></canvas>
+                      <select id="year-selector">
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="All">All</option>
+                      </select>
+                      <button onclick="resetChart()">Reset Chart</button>
+</h3>
+<div class="col-sm-6 text-center">
+    <h3 class="text-primary text-center">
+        Noticeably, salary for each degree cluster remains consistent in terms of their ranking over the years. 
+    </h3>
+
+</div>
+</body>
         </h1>
         <h2 class="block-subtitle">
-            So, what pays the most as a Singaporean university graduate?
+            Emploability of Graduates from Singapore Universities
         </h2>
         <!-- SECTION CONTENT -->
         <div class="row block-section">
             <!-- TEXT SECTION WITH 2 COUMNS -->            
             <div class="col-md-6 block-section-text block-section-text-left">
-                The degree one studies also affects the pay a graduate will receive. This is a result of industry needs and trends. 
-
+                Salary is not the only deciding factor when it comes to choosing a degree. Being employable and the ability to secure a 
+                job is also important when deciding which degree to select.
                 <div class="col-sm-6 text-center">
-                    <label class="label label-success">Bar Chart on the Top 20 Best paid university graduate. (uni&degree)</label>
-                   <div id="line-chart"></div>
+                    <canvas id="pieChart"></canvas>
 
             </div>
-            <h2 class="block-subtitle">
-                What is the most 'Cost-Efficient' University Graduate?
-            </h2>
-            <div class="col-md-6 block-section-text">
-                In a society as pragmatic as Singapore, what would hypothetically be the most cost-effcient career path? This would take into consideration the degree and university that would take the least amount of time (in years and month) to pay off the school fees. 
-                <div class="col-md-8 block-section-chart">
-                    <div class="col-sm-6 text-center">
-                        <label class="label label-success">Bar Chart on the Top 5 most cost-efficient university graduate.</label>
-                       <div id="line-chart"></div>
-                </div>
-                
-            <!-- TEXT SECTION WITH 1 COLUMN END -->  
-            <!-- CHART SECTION FULL WIDTH -->
-            <div class="col-md-12 block-section-chart">
-                
-            </div>
-            <!-- CHART SECTION FULL WIDTH END -->
-        </div>
-        <!-- SECTION CONTENT END-->
-    </div>
-    <!-- ONE BLOCK WITH WHITE BACKGROUND END -->
-    <!-- ONE BLOCK WITH GREY BACKGROUND -->
-    <div class="row grey-block" >
-        <h1 class="block-title">
-            Calculate the Cost-Efficiency of Your Degree
-        </h1>
-        <h2 class="block-subtitle">
-            Input the degree and university to calculate how many months it would take to pay off your degree.
-        </h2>
-        <!-- SECTION CONTENT -->
-        <div class="row block-section">
-            <!-- TEXT SECTION WITH 1 COLUMN -->            
-            <div class="col-md-12 block-section-text block-section-text-left">
-                <label for="university">Choose a university:</label>
-
-                <select name="university" id="university">
-                <option value="NUS">NUS</option>
-                <option value="SMU">SMU</option>
-                <option value="NTU">NTU</option>
-                <option value="SIM">SIM</option>
-                <option value="SUSS">SUSS</option>
-                <option value="SUTD">SUTD</option>
-                </select>
-
-                <label for="degree">Choose a degree:</label>
-
-                <select name="university" id="university">
-                <option value="socialsciences">Social Sciences</option>
-                <option value="business">Business</option>
-                <option value="science">Science</option>
-                <option value="medicine">Medicine</option>
-                <option value="law">Law</option>
-                <option value="computerscience">Computer Science</option>
-                </select>
-
-                <button id="months">Calculate Months</button> <!--calculate amount of months it would take to pay of school fees-->
-
-                <!--function to calculate above here-->
-
-            </div>
-            <!-- TEXT SECTION WITH 1 COLUMN END -->
-            <!-- TEXT SECTION WITH 2 COUMNS -->            
-            
-</div>
-    
+           
